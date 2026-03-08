@@ -2,54 +2,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Glenn Edley</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    a.title-link {
-      text-decoration: none;
-      color: #000;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f5f0;
+      --text: #1a1a1a;
+      --mid: #555;
+      --light: #888;
+      --accent: #E8472A;
+      --link: #2a5db0;
+      --max: 620px;
     }
-    a.title-link:hover {
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.75;
+      padding: 0 1.5rem;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 0 4rem;
+      animation: fadeIn 0.6s ease both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: 2.5rem;
+      color: var(--text);
+    }
+
+    h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 0.6rem;
+      color: var(--text);
+      text-transform: none;
+    }
+
+    h2 a {
+      color: var(--text);
       text-decoration: underline;
+      text-decoration-color: #ccc;
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+
+    h2 a:hover {
+      text-decoration-color: var(--accent);
+    }
+
+    p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.55rem;
+      border-radius: 2px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+    }
+
+    .section {
+      border-top: 1px solid #ddd;
+      padding-top: 0.2rem;
+      margin-top: 2.8rem;
+    }
+
+    .aside {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--light);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    nav {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ddd;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0;
+    }
+
+    nav a {
+      color: var(--mid);
+      margin-right: 1.2rem;
+      transition: color 0.15s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--light);
     }
   </style>
 </head>
-  <body style="background-color: #efefef; font-family: 'Montserrat', sans-serif; font-size: 18px;">
-  <table width="100%" cellpadding="0" cellspacing="0">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; font-family: 'Montserrat', sans-serif; line-height: 1.6; margin: 1rem 0 2rem 0;">
-          <tr>
-            <td style="padding: 10px 20px 20px 20px;">
-              <h1 style="font-size: 2.25rem; font-weight: bold; margin: 0 0 1rem;">
-                <a href="/" title="Glenn Edley" class="title-link">Glenn Edley</a>
-              </h1>
-              <p>I’m Glenn Edley, founder of <a href="https://spike.co.nz" target="_blank">Spike</a> — an email marketing agency I’ve run for over 20 years helping businesses grow with smart, consistent email campaigns.</p>
-              <p>I also lead marketing for <a href="https://racerproducts.co.nz" target="_blank">Racer Products</a> and <a href="https://scarles.co.nz" target="_blank">Scarles</a>, applying those same principles to e-commerce and performance parts.</p>
-              <p><strong>Want to see how I think about email?</strong><br> 
-                Check out <a href="/email">/email</a> — it’s where I share masterclasses, podcast appearances, and articles I’ve featured in.</p>
-              <p>This site shares what I’m focused on <a href="/now">/now</a>, what I’m <a href="/writing">/writing</a>, and how to connect with me.</p>
-              <p><strong>Why the 600px white box and #efefef background-color?</strong>
-<br>When I first started building emails they were just tables within tables with the simplest HTML possible — and the background colour was almost always #efefef.
-          Simple code is still the best way to have your emails render properly and improve your deliverability.</p>
-              <nav>
-                <a href="now.html">Now</a> |
-                <a href="writing.html">Writing</a> |
-                <a href="https://spike.co.nz"target"=_blank">Spike</a> |
-                <a href="https://www.linkedin.com/in/glennedley/"target"=_blank">LinkedIn</a> |
-                <a href="https://twitter.com/glennedley"target"=_blank">X</a> |
-                <a href="https://www.instagram.com/awellroundedman/"target"=_blank">Instagram</a>
-              </nav>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-    <footer style="text-align: center; font-size: 0.85rem; color: #666; margin-top: 2rem;">
-  glennedley.com — keeping it simple since 1971.
-</footer>
+<body>
+  <div class="wrap">
+
+    <h1>Glenn Edley</h1>
+
+    <p>I'm Glenn Edley, founder of <a href="https://spike.co.nz">Spike</a> — an email marketing agency I've run for over 20 years, helping businesses grow with smart, consistent email campaigns.</p>
+
+    <p>I also lead marketing for <a href="https://racerproducts.co.nz">Racer Products</a> and <a href="https://scarles.co.nz">Scarles</a>, applying those same principles to e-commerce and performance parts.</p>
+
+    <div class="section">
+
+      <h2><a href="https://theswearingproject.com">The Swearing Project</a> <span class="highlight">New</span></h2>
+      <p>A short, honest guide on how to find The Magic Pause — the moment before you react where you get to choose. $12 PDF. Based on a personal experiment.</p>
+      <p class="aside">theswearingproject.com</p>
+
+      <h2><a href="/email">How I think about email</a></h2>
+      <p>Masterclasses, podcast appearances, and articles — everything I've made about email marketing in one place.</p>
+
+      <h2><a href="/now">What I'm doing now</a></h2>
+      <p>What I'm focused on at the moment.</p>
+
+      <h2><a href="/writing">Writing</a></h2>
+      <p>Things I've written. Also the <a href="https://spike.co.nz">Monday Motivator</a> — a weekly email I've sent for years.</p>
+
+    </div>
+
+    <div class="section">
+      <h2>Why the 600px white box and #efefef background-color?</h2>
+      <p>When I first started building emails they were just tables within tables with the simplest HTML possible — and the background colour was almost always #efefef. Simple code is still the best way to have your emails render properly and improve your deliverability.</p>
+      <p class="aside">Old habits die hard. Some of them are good.</p>
+    </div>
+
+    <nav>
+      <a href="/now">Now</a>
+      <a href="/writing">Writing</a>
+      <a href="https://spike.co.nz">Spike</a>
+      <a href="https://theswearingproject.com">Swearing Project</a>
+      <a href="https://www.linkedin.com/in/glennedley/">LinkedIn</a>
+      <a href="https://x.com/glennedley">X</a>
+    </nav>
+
+    <footer>
+      <p>glennedley.com — keeping it simple since 1971.</p>
+    </footer>
+
+  </div>
 </body>
 </html>
