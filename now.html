@@ -2,102 +2,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now – Glenn Edley</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8">
-  <title>What I'm Doing Now – Glenn Edley</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    a.title-link {
-      text-decoration: none;
-      color: #000;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #efefef;
+      --text: #1a1a1a;
+      --mid: #555;
+      --light: #888;
+      --accent: #E8472A;
+      --link: #2a5db0;
+      --max: 620px;
     }
-    a.title-link:hover {
-      text-decoration: underline;
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.75;
+      padding: 0 1.5rem;
     }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 0 4rem;
+      animation: fadeIn 0.6s ease both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .back {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--light);
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+    .back a { color: var(--light); text-decoration: none; }
+    .back a:hover { color: var(--accent); }
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .meta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--light);
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 2.8rem 0 0.8rem;
+    }
+    p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+    }
+    ul {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.8;
+      padding-left: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    ul li { margin-bottom: 0.3rem; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section { border-top: 1px solid #d5d5d5; padding-top: 0.2rem; margin-top: 2.8rem; }
+    nav {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #d5d5d5;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav a { color: var(--mid); margin-right: 1.2rem; transition: color 0.15s; }
+    nav a:hover { color: var(--accent); text-decoration: none; }
+    footer { margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--light); }
   </style>
 </head>
-<body style="background-color: #efefef; font-family: 'Montserrat', sans-serif; font-size: 18px;">
-  <table width="100%" cellpadding="0" cellspacing="0">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; line-height: 1.6; margin: 1rem 0 2rem 0;">
-          <tr>
-            <td style="padding: 10px 20px 20px 20px;">
+<body>
+  <div class="wrap">
+    <span class="back"><a href="/">← Glenn Edley</a></span>
+    <h1>What I'm doing now</h1>
+    <p class="meta">Last updated: March 2026 · Inspired by <a href="https://sive.rs/now" target="_blank" rel="noopener">Derek Sivers</a> and <a href="https://nownownow.com" target="_blank" rel="noopener">nownownow.com</a></p>
 
-<h1 style="font-size: 2.25rem; font-weight: bold; margin: 0 0 1rem;">
-  <a href="/" title="Glenn Edley" class="title-link">Glenn Edley</a>
-</h1>
-<p><strong>Last updated: 17 April 2025</strong></p>
-<p>Updated regularly. Inspired by Derek Sivers and <a href="https://nownownow.com/about" target="_blank">nownownow.com</a>.</p>
+    <h2>The Swearing Project</h2>
+    <p>I just published <a href="https://theswearingproject.com" target="_blank" rel="noopener">The Swearing Project</a> — a $12 PDF guide on how to find The Magic Pause. Based on a personal experiment that changed how I react to everything.</p>
 
-<h2>SPIKE</h2>
-<p>Taking on new done-for-you email marketing clients. This is year 20 at <a href="https://spike.co.nz" target="_blank">spike.co.nz</a>.</p>
+    <h2>Spike</h2>
+    <p>Taking on new done-for-you email marketing clients. This is year 20 at <a href="https://spike.co.nz" target="_blank" rel="noopener">spike.co.nz</a>.</p>
 
-<h2>RACER PRODUCTS</h2>
-<p>I’m the Head of Marketing at Racer Products. My role covers our three main brands: <a href="https://racerproducts.co.nz" target="_blank">racerproducts.co.nz</a>, <a href="https://scarles.co.nz" target="_blank">scarles.co.nz</a> and <a href="https://mudstuck.co.nz" target="_blank">mudstuck.co.nz</a>.</p>
-              
-<h2>THE BOOK</h2>
-<p>The book I co-wrote with best-selling author and Psychology Coach Charles Donoghue, <em>Light Your Own Fire</em>, is published. Charles and I spent 12 months putting this together from the best of both of our writing. Alison Rowe, winner of both the Boston Marathon and New York City Marathon in the same year, wrote a fantastic endorsement for us.</p>
-<p>You can buy it from Amazon now: <a href="https://www.amazon.com/Light-your-own-fire-purpose-ebook/dp/B09Z7KP7NQ/" target="_blank">Light Your Own Fire</a></p>
+    <h2>Racer Products</h2>
+    <p>I'm Head of Marketing at Racer Products. My role covers our three main brands: <a href="https://racerproducts.co.nz" target="_blank" rel="noopener">racerproducts.co.nz</a>, <a href="https://scarles.co.nz" target="_blank" rel="noopener">scarles.co.nz</a> and <a href="https://mudstuck.co.nz" target="_blank" rel="noopener">mudstuck.co.nz</a>.</p>
 
-<h2>WRITING</h2>
-<p>I’ve been kickstarting people’s thinking with the MondayMotivator for over 18 years. <a href="https://www.spike.co.nz/mondaymotivator" target="_blank">Sign up here</a></p>
+    <h2>The Book</h2>
+    <p>The book I co-wrote with best-selling author and Psychology Coach Charles Donoghue, <a href="https://www.amazon.com/s?k=light+your+own+fire+donoghue+edley" target="_blank" rel="noopener">Light Your Own Fire</a>, is published. Alison Rowe — winner of both the Boston Marathon and New York City Marathon in the same year — wrote the endorsement.</p>
 
-<h2>READING</h2>
-<p>I read two amazing books that changed my mind on trees and New Zealand history. Well worth your time:</p>
-<ul>
-  <li><em>The Overstory: A Novel</em> by Richard Powers</li>
-  <li><em>Tupaia: The Remarkable Story Of Captain Cook’s Polynesian Navigator</em> by Joan Druett</li>
-</ul>
+    <h2>Writing</h2>
+    <p>I've been kickstarting people's thinking with the <a href="https://spike.co.nz/sign-me-up" target="_blank" rel="noopener">MondayMotivator</a> for over 18 years.</p>
 
-<h2>FITNESS</h2>
-<p>I’m working on <a href="https://spike.co.nz/becoming-a-well-rounded-man/" target="_blank">A Well-Rounded Man</a>, a guide to building strength, calm, and presence. It includes <a href="https://spike.co.nz/the-swearing-project/" target="_blank">The Swearing Project</a> — a 30-day challenge to help you master the magic pause that changes your life.</p>
-<ul>
-  <li>100 Hindu Squats a day – Day #1181</li>
-  <li>10 Hindu Pushups a day – Day #1099</li>
-  <li>Rebounding – Day #67 (great for lymphatic system)</li>
-  <li>1 Minute Plank a day – Day #1052</li>
-</ul>
-<h3>Push-up and Pull-up Ladders 3x per week</h3>
-<p>Usually combined with Hindu Squats and Push-ups as a circuit. Each round increases difficulty:</p>
+    <h2>Reading</h2>
+    <p>Two books that genuinely changed my thinking:</p>
+    <ul>
+      <li><em>The Overstory</em> by Richard Powers</li>
+      <li><em>Tupaia: The Remarkable Story of Captain Cook's Polynesian Navigator</em> by Joan Druett</li>
+    </ul>
 
-<ul>
-  <li>10 Hindu Squats</li>
-  <li>1 Pull-up</li>
-  <li>1 Push-up</li>
-  <li>10 putts</li>
-  <li>5–10 elastic band pulls (with good form)</li>
-</ul>
+    <h2>Fitness</h2>
+    <ul>
+      <li>100 Hindu Squats a day – Day #1181</li>
+      <li>10 Hindu Pushups a day – Day #1099</li>
+      <li>Rebounding – Day #67</li>
+      <li>1 Minute Plank a day – Day #1052</li>
+      <li>Push-up and Pull-up Ladders 3x per week</li>
+    </ul>
+    <p>Challenges are a great way to build habits. I track everything with the <a href="https://wayoflifeapp.com" target="_blank" rel="noopener">Way of Life app</a>. Anyone can do something for a minute a day.</p>
+    <p>I also play Disc Golf at Woodhill, Pae O Te Rangi, and The Orchard once or twice a week. Lots of walking — and occasionally climbing fences to find discs.</p>
 
-<p>Then rest 30s and increase reps each round. Keep going until your form breaks. I add burpees, shoulder presses and other exercises, but this is my baseline.</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/writing.html">Writing</a>
+      <a href="https://spike.co.nz" target="_blank" rel="noopener">Spike</a>
+      <a href="https://theswearingproject.com" target="_blank" rel="noopener">Swearing Project</a>
+      <a href="https://www.linkedin.com/in/glennedley/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/glennedley" target="_blank" rel="noopener">X</a>
+    </nav>
 
-<h3>Exercise Tracking</h3>
-
-<p><strong>Added: Jan 2024 – Disc Golf Putting</strong><br>
-10 putts per round (at least 50 putts)</p>
-
-<p><strong>Added: April 2024 – Skipping</strong><br>
-One minute of skipping before my circuits<br>
-<em>Removed: January 2025</em></p>
-
-<p><strong>Added: January 2025 – Rebounding</strong><br>
-One minute of rebounding before my circuits</p>
-
-
-<h3>Challenges</h3>
-<p>Are a great way to get into the habit of doing something when you said you would do it. For example rebounding started with Rebounding for One Minute a Day for 30 Days. As I write this I'm at Day 67. It stuck. Anyone can do something for a minute a day. Find a challenge, track with an app like <a href="https://wayoflifeapp.com/" target="_blank">Way of Life App</a> and you might be shocked what you're doing in a year</p>
-
-<h3>Walking</h3>
-<p>Lots of walking and sometimes climbing fences and bush-crashing to find discs. LOL! I go on regular walks and play Disc Golf at courses like Woodhill, Pae O Te Rangi and The Orchard once or twice a week.</p>
-
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-<footer style="text-align: center; font-size: 0.85rem; color: #666; margin-top: 2rem;">
-  glennedley.com — keeping it simple since 1971.
-</footer>
+    <footer><p>glennedley.com — keeping it simple since 1971.</p></footer>
+  </div>
 </body>
 </html>
