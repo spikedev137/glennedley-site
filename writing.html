@@ -2,50 +2,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Writing – Glenn Edley</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <style>
-    a.title-link {
-      text-decoration: none;
-      color: #000;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #efefef;
+      --text: #1a1a1a;
+      --mid: #555;
+      --light: #888;
+      --accent: #E8472A;
+      --link: #2a5db0;
+      --max: 620px;
     }
-    a.title-link:hover {
-      text-decoration: underline;
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.75;
+      padding: 0 1.5rem;
     }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 0 4rem;
+      animation: fadeIn 0.6s ease both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .back { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--light); margin-bottom: 2.5rem; display: block; }
+    .back a { color: var(--light); text-decoration: none; }
+    .back a:hover { color: var(--accent); }
+    h1 { font-family: 'Lora', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; line-height: 1.1; margin-bottom: 2rem; }
+    h2 { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin: 2.8rem 0 0.8rem; }
+    p { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 300; color: #333; line-height: 1.8; margin-bottom: 0.8rem; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #d5d5d5;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav a { color: var(--mid); margin-right: 1.2rem; transition: color 0.15s; }
+    nav a:hover { color: var(--accent); text-decoration: none; }
+    footer { margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--light); }
   </style>
 </head>
-<body style="background-color: #efefef; font-family: 'Montserrat', sans-serif; font-size: 18px;">
-  <table width="100%" cellpadding="0" cellspacing="0">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; line-height: 1.6; margin: 1rem 0 2rem 0;">
-          <tr>
-            <td style="padding: 10px 20px 20px 20px;">
+<body>
+  <div class="wrap">
+    <span class="back"><a href="/">← Glenn Edley</a></span>
+    <h1>Writing</h1>
+    <p>Some thoughts on what I'm learning, building, and training for. I write more email-focused material over at <a href="https://spike.co.nz" target="_blank" rel="noopener">Spike</a>.</p>
 
-<h1 style="font-size: 2.25rem; font-weight: bold; margin: 0 0 1rem;">
-  <a href="/" title="Glenn Edley" class="title-link">Glenn Edley</a>
-</h1>
+    <h2>The Swearing Project</h2>
+    <p>My latest. A short, honest guide on how to find The Magic Pause — the moment before you react where you get to choose. $12 PDF.</p>
+    <p><a href="https://theswearingproject.com" target="_blank" rel="noopener">theswearingproject.com →</a></p>
 
-<p>Some thoughts on what I’m learning, building, and training for. I write more email-focused material over at <a href="https://spike.co.nz/blog" target="_blank">Spike</a> as well as the <a href="https://spike.co.nz/category/mondaymotivator/" target=_blank">MondayMotivator</a> which I started in 2004 as a way to prove you could send weekly emails and to stay top of mind with the people you meet. These pieces are a little slower, a little more of a kick start for your thinking.</p>
+    <h2>The Monday Motivator</h2>
+    <p>I started the MondayMotivator in 2004 as a way to prove you could send weekly emails and stay top of mind. I've been sending it for over 18 years. These pieces are a little slower, a little more of a kickstart for your thinking.</p>
+    <p><a href="https://spike.co.nz/sign-me-up" target="_blank" rel="noopener">Sign up here →</a></p>
 
-<h2>The Book</h2>
-<p>The book I co-wrote with best-selling author and Psychology Coach Charles Donoghue, <em>Light Your Own Fire</em>, is published. Charles and I spent 12 months putting this together from the best of both of our writing. Alison Rowe, winner of both the Boston Marathon and New York City Marathon in the same year, wrote a fantastic endorsement for us.</p>
-<p>You can buy it from Amazon now: <a href="https://www.amazon.com/Light-your-own-fire-purpose-ebook/dp/B09Z7KP7NQ/" target="_blank">Light Your Own Fire</a></p>
+    <h2>Light Your Own Fire</h2>
+    <p>The book I co-wrote with best-selling author and Psychology Coach Charles Donoghue. We spent 12 months putting this together from the best of both of our writing. Alison Rowe — winner of both the Boston Marathon and New York City Marathon in the same year — wrote the endorsement.</p>
+    <p><a href="https://www.amazon.com/s?k=light+your+own+fire+donoghue+edley" target="_blank" rel="noopener">Buy on Amazon →</a></p>
 
-<h2>Get the Monday Motivator</h2>
-<p>I’ve been kickstarting people’s thinking every Monday for over 18 years. You can sign up here: <a href="https://spike.co.nz/sign-me-up/" target="_blank">spike.co.nz/sign-me-up</a></p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/now.html">Now</a>
+      <a href="https://spike.co.nz" target="_blank" rel="noopener">Spike</a>
+      <a href="https://theswearingproject.com" target="_blank" rel="noopener">Swearing Project</a>
+      <a href="https://www.linkedin.com/in/glennedley/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/glennedley" target="_blank" rel="noopener">X</a>
+    </nav>
 
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-
-<footer style="text-align: center; font-size: 0.85rem; color: #666; margin-top: 2rem;">
-  glennedley.com — keeping it simple since 1971.
-</footer>
+    <footer><p>glennedley.com — keeping it simple since 1971.</p></footer>
+  </div>
 </body>
 </html>
