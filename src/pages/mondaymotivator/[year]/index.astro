@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { years, postsForYear } from '../../../data/posts';
+
+export function getStaticPaths() {
+  return years.map((year) => ({ params: { year: String(year) }, props: { year } }));
+}
+
+const { year } = Astro.props;
+const yearPosts = postsForYear(year);
+---
+
+<BaseLayout title={`MondayMotivator ${year} – Glenn Edley`} description={`MondayMotivator editions originally published by Glenn Edley in ${year}.`}>
+  <span class="back"><a href="/mondaymotivator/">← MondayMotivator archive</a></span>
+  <h1>MondayMotivator: {year}</h1>
+  <p>{yearPosts.length} {yearPosts.length === 1 ? 'edition' : 'editions'} from {year}, listed from newest to oldest.</p>
+  <ol class="post-list">
+    {yearPosts.map((post) => (
+      <li>
+        <time datetime={post.date}>{new Date(`${post.date}T12:00:00`).toLocaleDateString('en-NZ', { day: 'numeric', month: 'long' })}</time>
+        <a href={`/mondaymotivator/${post.year}/${post.slug}/`}>{post.title}</a>
+      </li>
+    ))}
+  </ol>
+</BaseLayout>

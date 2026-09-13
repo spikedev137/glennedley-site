@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  jsonLd?: Record<string, unknown>;
+};
+
+const {
+  title = 'Glenn Edley',
+  description = 'Writing, email marketing and current projects from Glenn Edley.',
+  canonicalPath = Astro.url.pathname,
+  jsonLd,
+} = Astro.props;
+const canonical = new URL(canonicalPath, Astro.site);
+---
+
+<!doctype html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <div class="wrap">
+      <slot />
+      <nav aria-label="Main navigation">
+        <a href="/now/">Now</a>
+        <a href="/writing/">Writing</a>
+        <a href="/email/">Email</a>
+        <a href="/mondaymotivator/">MondayMotivator</a>
+        <a href="/four-factors/">Four Factors</a>
+        <a href="https://spike.co.nz" target="_blank" rel="noopener">Spike</a>
+        <a href="https://theswearingproject.com" target="_blank" rel="noopener">Swearing Project</a>
+        <a href="https://www.linkedin.com/in/glennedley/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/glennedley" target="_blank" rel="noopener">X</a>
+      </nav>
+      <footer><p>glennedley.com — keeping it simple since 1971.</p></footer>
+    </div>
+  </body>
+</html>

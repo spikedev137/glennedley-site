@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { posts, years, postsForYear } from '../../data/posts';
+import { factors } from '../../data/factors';
+import { postsForFactor } from '../../data/posts';
+
+const latest = posts.slice(0, 12);
+---
+
+<BaseLayout title="MondayMotivator Archive – Glenn Edley" description="The MondayMotivator archive: short weekly ideas from Glenn Edley, published since 2004.">
+  <span class="back"><a href="/writing/">← Writing</a></span>
+  <h1>MondayMotivator</h1>
+  <p>I started the MondayMotivator in 2004 to stay in contact with clients and prospects, prove you could send useful emails consistently, and help people begin the week with a worthwhile thought.</p>
+  <p>This archive brings those weekly notes together in one place.</p>
+  <p><a href="https://spike.co.nz/sign-me-up" target="_blank" rel="noopener">Get the next MondayMotivator by email →</a></p>
+
+  <h2>Browse by the Four Factors</h2>
+  <p>These four ideas are the thread running through much of my writing. An edition can belong to more than one factor.</p>
+  <div class="factor-grid">
+    {factors.map((factor) => (
+      <a class="factor-card" href={`/mondaymotivator/factor/${factor.slug}/`}>
+        <strong>{factor.name}</strong>
+        <span>{factor.short}</span>
+        <small>{postsForFactor(factor.slug).length} related editions</small>
+      </a>
+    ))}
+  </div>
+  <p><a href="/four-factors/">Understand the Four Factors →</a></p>
+
+  <h2>Browse by year</h2>
+  <div class="archive-years">
+    {years.map((year) => <a href={`/mondaymotivator/${year}/`}>{year}<br /><small>{postsForYear(year).length}</small></a>)}
+  </div>
+
+  <h2>Latest editions</h2>
+  <ol class="post-list">
+    {latest.map((post) => (
+      <li>
+        <time datetime={post.date}>{new Date(`${post.date}T12:00:00`).toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <a href={`/mondaymotivator/${post.year}/${post.slug}/`}>{post.title}</a>
+      </li>
+    ))}
+  </ol>
+</BaseLayout>

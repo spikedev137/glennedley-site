@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { posts } from '../../../data/posts';
+import { factorBySlug } from '../../../data/factors';
+
+export function getStaticPaths() {
+  return posts.map((post, index) => ({
+    params: { year: String(post.year), slug: post.slug },
+    props: {
+      post,
+      newer: index > 0 ? posts[index - 1] : null,
+      older: index < posts.length - 1 ? posts[index + 1] : null,
+    },
+  }));
+}
+
+const { post, newer, older } = Astro.props;
+const displayDate = new Date(`${post.date}T12:00:00`).toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
+const pagePath = `/mondaymotivator/${post.year}/${post.slug}/`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  datePublished: post.date,
+  author: { '@type': 'Person', name: 'Glenn Edley', url: 'https://glennedley.com/' },
+  publisher: { '@type': 'Person', name: 'Glenn Edley' },
+  mainEntityOfPage: `https://glennedley.com${pagePath}`,
+};
+---
+
+<BaseLayout title={`${post.title} – MondayMotivator`} description={post.excerpt} canonicalPath={pagePath} jsonLd={jsonLd}>
+  <span class="back"><a href={`/mondaymotivator/${post.year}/`}>← MondayMotivator {post.year}</a></span>
+  <article>
+    <h1>{post.title}</h1>
+    <p class="meta">Originally published {displayDate}</p>
+    <div class="factor-tags" aria-label="Four Factors">
+      <a href={`/mondaymotivator/factor/${post.primaryFactor}/`}>{factorBySlug[post.primaryFactor].name}</a>
+      {post.secondaryFactor && <a class="secondary" href={`/mondaymotivator/factor/${post.secondaryFactor}/`}>{factorBySlug[post.secondaryFactor].name}</a>}
+    </div>
+    <div class="article-body" set:html={post.html} />
+  </article>
+  <p class="factor-note">This edition is organised using <a href="/four-factors/">the Four Factors</a>: Belief, Programming the Mind, Mental Posture and Focus.</p>
+  <div class="post-pagination">
+    <div>{older && <><span class="aside">Older</span><br /><a href={`/mondaymotivator/${older.year}/${older.slug}/`}>← {older.title}</a></>}</div>
+    <div class="next">{newer && <><span class="aside">Newer</span><br /><a href={`/mondaymotivator/${newer.year}/${newer.slug}/`}>{newer.title} →</a></>}</div>
+  </div>
+</BaseLayout>

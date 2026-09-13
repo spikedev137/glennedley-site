@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { factors } from '../../../data/factors';
+import { postsForFactor } from '../../../data/posts';
+
+export function getStaticPaths() {
+  return factors.map((factor) => ({ params: { factor: factor.slug }, props: { factor } }));
+}
+
+const { factor } = Astro.props;
+const factorPosts = postsForFactor(factor.slug);
+const grouped = [...new Set(factorPosts.map((post) => post.year))].map((year) => ({
+  year,
+  posts: factorPosts.filter((post) => post.year === year),
+}));
+---
+
+<BaseLayout title={`${factor.name} MondayMotivators – Glenn Edley`} description={`${factor.description} Browse MondayMotivator articles connected with ${factor.name}.`}>
+  <span class="back"><a href="/mondaymotivator/">← MondayMotivator archive</a></span>
+  <p class="factor-kicker">One of the Four Factors</p>
+  <h1>{factor.name}</h1>
+  <p class="lead">{factor.short}</p>
+  <p>{factor.description}</p>
+  <p><a href="/four-factors/">See how all four factors work together →</a></p>
+
+  <h2>{factorPosts.length} related editions</h2>
+  {grouped.map((group) => (
+    <section class="factor-year">
+      <h3>{group.year}</h3>
+      <ol class="post-list">
+        {group.posts.map((post) => (
+          <li>
+            <time datetime={post.date}>{new Date(`${post.date}T12:00:00`).toLocaleDateString('en-NZ', { day: 'numeric', month: 'long' })}</time>
+            <a href={`/mondaymotivator/${post.year}/${post.slug}/`}>{post.title}</a>
+            <span class="factor-role">{post.primaryFactor === factor.slug ? 'Primary factor' : 'Also relates to this factor'}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+</BaseLayout>

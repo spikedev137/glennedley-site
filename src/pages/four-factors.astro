@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { factors } from '../data/factors';
+---
+
+<BaseLayout title="The Four Factors – Glenn Edley" description="Belief, Programming the Mind, Mental Posture and Focus: four practical ways to understand your thinking and behaviour.">
+  <span class="back"><a href="/">← Glenn Edley</a></span>
+  <h1>The Four Factors</h1>
+  <p class="lead">Your thoughts affect your feelings, and your feelings influence your behaviour. The Four Factors are a practical way to notice that process and choose your response.</p>
+  <p>You cannot avoid every event in your life. You can become more deliberate about what you believe, what you put into your mind, the mental position you take and where you place your attention.</p>
+
+  <div class="factor-explanations">
+    {factors.map((factor, index) => (
+      <section id={factor.slug} class="factor-explanation">
+        <p class="factor-number">0{index + 1}</p>
+        <h2>{factor.name}</h2>
+        <p class="factor-question">{factor.short}</p>
+        <p>{factor.description}</p>
+        <p><a href={`/mondaymotivator/factor/${factor.slug}/`}>Explore MondayMotivators about {factor.name} →</a></p>
+      </section>
+    ))}
+  </div>
+
+  <section class="book-callout">
+    <h2>Go deeper with Light Your Own Fire</h2>
+    <p>The Four Factors grew from the practical performance psychology work I developed with Charles Donoghue. Our book, <em>Light Your Own Fire: How to Find Purpose in Your Life</em>, explores many of the same foundations—including purpose, mental posture, focus, courage and belief.</p>
+    <p><a href="https://lightyourownfire.com/" target="_blank" rel="noopener">Visit the book website →</a></p>
+    <p><a href="https://glennedley.gumroad.com/l/lyof" target="_blank" rel="noopener">Buy on Gumroad</a> · <a href="https://a.co/d/0bWr7192" target="_blank" rel="noopener">Buy on Amazon</a></p>
+  </section>
+</BaseLayout>

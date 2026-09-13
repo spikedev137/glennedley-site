@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glennedley.com/sitemap.xml

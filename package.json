@@ -1,0 +1,19 @@
+{
+  "name": "glennedley-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && node scripts/clean-dist.mjs && astro build",
+    "test": "node scripts/validate-build.mjs",
+    "preview": "astro preview",
+    "import:mondaymotivator": "node scripts/import-wordpress.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.13.5",
+    "cheerio": "^1.1.2",
+    "typescript": "^5.9.2"
+  }
+}
