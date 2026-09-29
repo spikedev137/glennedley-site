@@ -39,7 +39,10 @@ const jsonLd = {
     </div>
     <div class="article-body" set:html={post.html} />
   </article>
-  <p class="factor-note">This edition is organised using <a href="/four-factors/">the Four Factors</a>: Belief, Programming the Mind, Mental Posture and Focus.</p>
+  <p class="factor-note">
+  This edition is filed under <a href={`/mondaymotivator/factor/${post.primaryFactor}/`}>{factorBySlug[post.primaryFactor].name}</a> within <a href="/four-factors/">the Four Factors</a>.
+  {post.secondaryFactor && <> It also relates to <a href={`/mondaymotivator/factor/${post.secondaryFactor}/`}>{factorBySlug[post.secondaryFactor].name}</a>.</>}
+</p>
   <div class="post-pagination">
     <div>{older && <><span class="aside">Older</span><br /><a href={`/mondaymotivator/${older.year}/${older.slug}/`}>← {older.title}</a></>}</div>
     <div class="next">{newer && <><span class="aside">Newer</span><br /><a href={`/mondaymotivator/${newer.year}/${newer.slug}/`}>{newer.title} →</a></>}</div>
