@@ -2,19 +2,78 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Email – Glenn Edley" description="How Glenn Edley thinks about email marketing.">
+<BaseLayout title="Email marketing talks and resources – Glenn Edley" description="Practical email marketing talks, workshops and interviews from Glenn Edley. Find ideas for your next email, or get help through Spike.">
   <span class="back"><a href="/">← Glenn Edley</a></span>
-  <h1>How I think about email</h1>
-  <p>I've spent over 20 years helping businesses get real results from email. Here's a selection of resources, interviews, and content that explain how I think and work.</p>
+  <h1>Get more from your email marketing</h1>
+  <p class="lead">Have a customer list you’re not doing much with? Or a newsletter that takes too much effort to put together?</p>
+  <p>These talks, workshops and interviews are a place to start. Find ideas for what to send, how to make your emails useful and how to keep in touch consistently.</p>
+  <p>I founded Spike in 2004. My approach starts with your customer: what do they need to know, and what do you want to help them do next?</p>
 
-  <h2>Masterclass</h2>
-  <p>Watch my <a href="https://youtu.be/Xjrn4iKYeXk?si=LRGlhRCLOJmwqfAl" target="_blank" rel="noopener">Mailchimp Masterclass on YouTube</a>. Most businesses think marketing requires a big budget. It doesn't.</p>
-  <p>In this 54-minute masterclass, watched over 18,000 times, I walk through five practical, low-cost tactics you can put to work straight away. From running competitions and personalising your emails, to winning back lost customers, setting up automation, and making every touchpoint count.</p>
-  <p>Whether you're just getting started or want to get more from what you already have, this is a good place to begin.</p>
+  <section aria-labelledby="start-here">
+    <h2 id="start-here">Start here</h2>
+    <article class="resource featured">
+      <p class="resource-type">Video · Masterclass</p>
+      <h3>Practical marketing ideas you can put to work</h3>
+      <p>You don’t need a big marketing budget to make better use of the customers and contacts you already have. My Mailchimp masterclass covers competitions, personalisation, winning back customers and automation.</p>
+      <p><a class="resource-link" href="https://youtu.be/Xjrn4iKYeXk" target="_blank" rel="noopener">Watch the masterclass →</a></p>
+    </article>
+  </section>
 
-  <h2>Articles &amp; Mentions</h2>
-  <p><a href="https://emaillove.com/email-peeps-54-glenn-edley" target="_blank" rel="noopener">Email Love</a> — Email Peeps: Glenn Edley feature.</p>
+  <section aria-labelledby="workshops">
+    <h2 id="workshops">Learn with me</h2>
+    <article class="resource">
+      <p class="resource-type">Video · Digital Boost</p>
+      <h3>Email marketing workshop</h3>
+      <p>A recording from my work with Digital Boost, helping business owners get to grips with email marketing.</p>
+      <p><a class="resource-link" href="https://www.youtube.com/watch?v=GEm5vxosM68" target="_blank" rel="noopener">Watch the Digital Boost session →</a></p>
+    </article>
+    <p class="recording-note">These are original recordings. If a platform screen or feature has changed, get in touch for help applying the ideas to your current setup.</p>
+  </section>
 
-  <h2>Work with me</h2>
-  <p>Whether you need a one-off audit, a done-for-you email plan, or someone to take email marketing off your plate — <a href="https://spike.co.nz" target="_blank" rel="noopener">get in touch via Spike</a>.</p>
+  <section aria-labelledby="conversations">
+    <h2 id="conversations">Conversations and interviews</h2>
+    <article class="resource">
+      <p class="resource-type">Podcast / video · Campaign Genius · 2021</p>
+      <h3>Finding something useful to send</h3>
+      <p>Matthew Dunn and I talk about Mailchimp, communicating with customers and turning the questions you already answer into newsletter content. Includes a transcript if you’d rather read.</p>
+      <p><a class="resource-link" href="https://campaigngenius.io/futureofemail/2021/glenn-edley" target="_blank" rel="noopener">Watch, listen or read the conversation →</a></p>
+    </article>
+    <article class="resource">
+      <p class="resource-type">Interview · Email Love · 2024</p>
+      <h3>How I got into email marketing</h3>
+      <p>My Email Peeps interview: how I discovered email marketing and started Spike.</p>
+      <p><a class="resource-link" href="https://emaillove.com/email-peeps-54-glenn-edley" target="_blank" rel="noopener">Read the Email Love interview →</a></p>
+    </article>
+  </section>
+
+  <section aria-labelledby="practice">
+    <h2 id="practice">Email in practice</h2>
+    <article class="resource">
+      <p class="resource-type">Client story · Mailchimp</p>
+      <h3>Keeping customers in the loop at EquipOutdoors</h3>
+      <p>Mailchimp’s feature on my work with EquipOutdoors, an outdoor retailer that needed a more consistent way to tell customers about products and promotions.</p>
+      <p><a class="resource-link" href="https://mailchimp.com/resources/consistent-cash-man/" target="_blank" rel="noopener">Read the client story →</a></p>
+    </article>
+  </section>
+
+  <section class="help" aria-labelledby="get-help">
+    <h2 id="get-help">Put it into practice</h2>
+    <h3>Want help with your email?</h3>
+    <p>If you’ve got a list you’re not using, a Mailchimp question or emails that keep slipping down the to-do list, tell us what’s happening.</p>
+    <p>At Spike, we help you work out what needs attention and can build, send and improve your emails for you.</p>
+    <p><a class="button" href="https://spike.co.nz/contact-spike/" target="_blank" rel="noopener">Talk to Spike about your email →</a></p>
+  </section>
 </BaseLayout>
+
+<style>
+  .resource { border-top: 1px solid var(--line); padding: 1.3rem 0 0.7rem; }
+  .featured { border-left: 3px solid var(--accent); border-top: 0; background: #fff6; padding: 1.4rem; }
+  h3 { font-family: 'Lora', Georgia, serif; font-size: 1.35rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.65rem; }
+  .resource-type { color: var(--mid); font-size: 0.78rem; font-weight: 500; margin-bottom: 0.45rem; }
+  .resource-link { font-weight: 500; }
+  .recording-note { color: var(--mid); font-size: 0.85rem; margin-top: 0.8rem; }
+  .help { border-top: 1px solid var(--line); margin-top: 2.2rem; }
+  .button { display: inline-block; background: var(--text); color: #fff; padding: 0.7rem 1rem; font-weight: 500; margin-top: 0.4rem; }
+  .button:hover { background: #333; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+</style>
