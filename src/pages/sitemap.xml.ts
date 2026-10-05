@@ -5,6 +5,7 @@ import { factors } from '../data/factors';
 const site = 'https://glennedley.com';
 const paths = [
   '/',
+  '/the-next-move/',
   '/now/',
   '/writing/',
   '/email/',
