@@ -9,6 +9,7 @@ const paths = [
   '/now/',
   '/writing/',
   '/email/',
+  '/first-100-subscribers/',
   '/mondaymotivator/',
   '/four-factors/',
   ...factors.map((factor) => `/mondaymotivator/factor/${factor.slug}/`),

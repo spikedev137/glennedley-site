@@ -38,8 +38,8 @@ for (const file of htmlFiles) {
 
 const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>/g)].length;
-if (sitemapUrls !== 735) problems.push(`sitemap.xml: expected 735 URLs, found ${sitemapUrls}`);
-if (htmlFiles.length !== 735) problems.push(`dist: expected 735 HTML pages, found ${htmlFiles.length}`);
+if (sitemapUrls !== 736) problems.push(`sitemap.xml: expected 736 URLs, found ${sitemapUrls}`);
+if (htmlFiles.length !== 736) problems.push(`dist: expected 736 HTML pages, found ${htmlFiles.length}`);
 
 if (problems.length) {
   console.error(problems.join('\n'));
