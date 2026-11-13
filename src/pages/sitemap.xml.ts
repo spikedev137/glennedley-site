@@ -5,9 +5,11 @@ import { factors } from '../data/factors';
 const site = 'https://glennedley.com';
 const paths = [
   '/',
-  '/the-next-move/',
+  '/your-next-move/',
+  '/work-with-spike/',
   '/now/',
-  '/writing/',
+  '/the-swearing-project/',
+  '/light-your-own-fire/',
   '/email/',
   '/first-100-subscribers/',
   '/mondaymotivator/',

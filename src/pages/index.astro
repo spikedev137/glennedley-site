@@ -1,29 +1,54 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { posts } from '../data/posts';
+const examples = posts.slice(0, 3);
 ---
 
-<BaseLayout>
-  <h1>Glenn Edley</h1>
-  <p>I'm Glenn Edley, founder of <a href="https://spike.co.nz" target="_blank" rel="noopener">Spike</a> — an email marketing agency I've run for over 20 years, helping businesses grow with smart, consistent email campaigns.</p>
-  <p>I also lead marketing for <a href="https://racerproducts.co.nz" target="_blank" rel="noopener">Racer Products</a> and <a href="https://scarles.co.nz" target="_blank" rel="noopener">Scarles</a>, applying those same principles to e-commerce and performance parts.</p>
-  <div class="section">
-    <h2><a href="/the-next-move/">The Next Move</a> <span class="highlight">Pilot</span></h2>
-    <p>More sales start with finding where customers get stuck. I help business owners and leaders choose one commercial move, put it to the test, and follow through.</p>
-    <h2><a href="https://theswearingproject.com" target="_blank" rel="noopener">The Swearing Project</a> <span class="highlight">New</span></h2>
-    <p>A short, honest guide on how to find The Magic Pause — the moment before you react where you get to choose. $12 PDF. Based on a personal experiment.</p>
-    <p class="aside">theswearingproject.com</p>
-    <h2><a href="/email/">How I think about email</a></h2>
-    <p>Masterclasses, podcast appearances, and articles — everything I've made about email marketing in one place.</p>
-    <h2><a href="/now/">What I'm doing now</a></h2>
-    <p>What I'm focused on at the moment.</p>
-    <h2><a href="/writing/">Writing</a></h2>
-    <p>Things I've written, including the <a href="/mondaymotivator/">MondayMotivator</a> — a weekly email I've sent since 2004.</p>
-    <h2><a href="/four-factors/">The Four Factors</a></h2>
-    <p>Belief, Programming the Mind, Mental Posture and Focus — a practical framework that now organises the MondayMotivator archive.</p>
-  </div>
-  <div class="section">
-    <h2>Why #efefef?</h2>
-    <p>When I first started building emails they were just tables within tables with the simplest HTML possible — and the background colour was almost always #efefef. Simple code is still the best way to have your emails render properly and improve your deliverability.</p>
-    <p class="aside">Old habits die hard. Some of them are good.</p>
-  </div>
+<BaseLayout wide title="Glenn Edley | MondayMotivator, writing and work" description="Kickstart your thinking with MondayMotivator, Glenn Edley's weekly email. Read the archive, explore his work, or find help with your customer communication.">
+  <main>
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="eyebrow">MondayMotivator · Since 2004</p>
+        <h1 id="home-title">Kickstart<br />your thinking<br /><span>and your week.</span></h1>
+        <p class="hero-description">A fresh thought, a useful question or a story that helps you see things differently. Get my MondayMotivator in your inbox each week.</p>
+        <NewsletterSignup id="home-mondaymotivator" />
+        <p class="hero-note">Free to read. <a href="/mondaymotivator/">Explore the archive first.</a></p>
+      </div>
+      <div class="hero-note-block">
+        <p class="eyebrow">A note from Glenn</p>
+        <p class="hero-statement">Life gives us<br />plenty to<br />think about.</p>
+        <p>I write about what I'm learning in life and business, the habits we build, and the things that make us stop and think.</p>
+        <p>MondayMotivator is where I bring those thoughts together.</p>
+        <a href="/mondaymotivator/">More of my writing <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="reading-title">
+      <div class="section-heading"><div><p class="eyebrow">Start reading</p><h2 id="reading-title">Something to think about.</h2></div><a href="/mondaymotivator/">Browse the archive →</a></div>
+      <ol class="reading-grid">
+        {examples.map((post, index) => <li><span class="reading-number">0{index + 1}</span><h3><a href={`/mondaymotivator/${post.year}/${post.slug}/`}>{post.title}</a></h3><a class="small-link" href={`/mondaymotivator/${post.year}/${post.slug}/`}>Read this edition →</a></li>)}
+      </ol>
+      <p class="section-note">You can also explore the archive through <a href="/four-factors/">the Four Factors</a>: Belief, Programming the Mind, Mental Posture and Focus.</p>
+    </section>
+
+    <section class="home-section about-section" aria-labelledby="about-title">
+      <div><p class="eyebrow">The person behind the emails</p><h2 id="about-title">I'm Glenn.</h2></div>
+      <div><p>I'm a writer, a business owner, a husband and a dad. I like good questions, getting things done and a round of disc golf.</p><p>I founded <a href="/work-with-spike/">Spike</a> and have spent more than 20 years helping businesses communicate with their customers. I also lead marketing for <a href="https://racerproducts.co.nz" target="_blank" rel="noopener">Racer Products</a> and <a href="https://scarles.co.nz" target="_blank" rel="noopener">Scarles</a>.</p><p>That experience is part of what I write about. So is the rest of life.</p><a class="small-link" href="/now/">What I'm doing now →</a></div>
+    </section>
+
+    <section class="home-section" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><div><p class="eyebrow">When you want help</p><h2 id="work-title">Two ways to work together.</h2></div></div>
+      <div class="work-grid">
+        <article><p class="eyebrow">Advice and direction</p><h3>Work with Glenn</h3><p>You want a fresh pair of eyes on your business, your customer communication or where sales are getting stuck. We'll start with what's happening and what you're trying to change.</p><a class="text-action" href="/your-next-move/">Explore working with Glenn →</a></article>
+        <article><p class="eyebrow">Email marketing done for you</p><h3>Work with Spike</h3><p>You want your email marketing planned and handled. Spike is my agency, helping businesses with Mailchimp, campaigns and customer email.</p><a class="text-action" href="/work-with-spike/">Explore working with Spike →</a></article>
+      </div>
+    </section>
+
+    <section class="home-section projects-section" aria-labelledby="projects-title">
+      <p class="eyebrow">Elsewhere in my work</p><h2 id="projects-title">Writing, ideas and projects.</h2>
+      <ul class="project-list"><li><a href="/light-your-own-fire/">Light Your Own Fire <span aria-hidden="true">→</span></a><p>The book I co-wrote with Charles Donoghue.</p></li><li><a href="/the-swearing-project/">The Swearing Project <span aria-hidden="true">→</span></a><p>A short, honest guide to finding the pause before you react.</p></li><li><a href="/email/">How I think about email <span aria-hidden="true">→</span></a><p>Masterclasses, podcast appearances and articles in one place.</p></li></ul>
+      <details class="old-habits"><summary>Why the old site was #efefef</summary><p>When I first started building emails they were tables within tables with the simplest HTML possible, and the background colour was almost always #efefef. Simple code is still the best way to have your emails render properly and improve your deliverability.</p><p>Old habits die hard. Some of them are good.</p></details>
+    </section>
+  </main>
 </BaseLayout>

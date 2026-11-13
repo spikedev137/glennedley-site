@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/projects.css';
+const purchaseUrl = 'https://glennedley.gumroad.com/l/biyirv';
+---
+
+<BaseLayout wide title="The Swearing Project – Glenn Edley" description="How to find The Magic Pause. A short, honest guide by Glenn Edley, with a 30-day personal experiment and daily tracker.">
+  <main class="project-page">
+    <span class="back"><a href="/mondaymotivator/">← Newsletter</a></span>
+    <header class="project-hero">
+      <p class="eyebrow">A guide by Glenn Edley</p>
+      <h1>The Swearing Project</h1>
+      <p class="lead">How to find The Magic Pause</p>
+      <p>A short, honest guide based on a personal experiment, and the one thing that actually worked when counting to ten didn't.</p>
+      <div class="project-actions"><a class="brand-button" href={purchaseUrl} target="_blank" rel="noopener">Get the guide on Gumroad <span aria-hidden="true">→</span></a></div>
+      <p class="project-format">13 pages · PDF · Includes a 30-day experiment and daily tracker</p>
+    </header>
+
+    <section class="project-section" aria-labelledby="moment-title">
+      <p class="eyebrow">The moment it worked</p>
+      <div>
+        <h2 id="moment-title">There was a ute on my side of the road.</h2>
+        <p>As I navigated the twisty country roads home, it came straight at me. My usual reaction would have been instant. Loud. Ugly.</p>
+        <p>Instead, I said: “What the heck!” And smiled.</p>
+        <p>That was the moment I realised my Swearing Project had actually worked.</p>
+        <p class="project-callout">I started it as a simple experiment. What I found changed how I react to everything.</p>
+        <p>I am what you might call a recovering swearer. Not the casual kind where the odd word slips out at sport or traffic. The kind where it had become a default reaction. A habit so embedded I did not even notice it most of the time.</p>
+        <p>My wife noticed. My kids noticed. And eventually, I noticed too.</p>
+        <p>The experiment started simply: what happens if I just stop? Not cut back. Not try harder. Just stop entirely, and see what happens.</p>
+        <p>What I did not expect was finding something the Stoics have been teaching for centuries. I had never actually experienced it until now.</p>
+        <p><strong>The pause.</strong> This guide is about that. Not swearing, really. The pause.</p>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="inside-title">
+      <p class="eyebrow">What's inside</p>
+      <div>
+        <h2 id="inside-title">13 pages. Everything that actually worked.</h2>
+        <ol class="project-chapters">
+          <li><span>Why swearing is a crutch, not a release, and what it's actually doing to your emotions</span></li>
+          <li><span>The Magic Pause: what it is, why it works, and how stopping swearing creates it</span></li>
+          <li><span>The negative interaction cycle: how swearing affects your relationships more than you realise</span></li>
+          <li><span>The myths about swearing, debunked: it's not intelligence, it's not vocabulary, and yes, you can stop</span></li>
+          <li><span>How to run your own 30-day Swearing Project, including what to track and how to handle slip-ups</span></li>
+        </ol>
+        <p class="project-bonus">Plus a simple one-page daily tracker to keep you honest, or an app recommendation I use.</p>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="reader-title">
+      <p class="eyebrow">This is for you if</p>
+      <div>
+        <h2 id="reader-title">Sound familiar?</h2>
+        <ul class="project-fit">
+          <li>You swear out of habit and wonder if you could stop</li>
+          <li>You react too quickly and want more control over your emotions</li>
+          <li>Your swearing is affecting your relationships or how others see you</li>
+          <li>You like running personal experiments and testing your own habits</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-purchase" aria-labelledby="get-guide-title">
+      <h2 id="get-guide-title">It won't take long to read. But it might take a while to stop thinking about.</h2>
+      <div class="project-actions"><a class="brand-button" href={purchaseUrl} target="_blank" rel="noopener">Get the guide on Gumroad <span aria-hidden="true">→</span></a></div>
+      <p class="project-format">13 pages · Instant download · PDF. See Gumroad for the current price and currency.</p>
+    </section>
+    <p class="project-original">Also at <a href="https://theswearingproject.com" target="_blank" rel="noopener">theswearingproject.com</a>.</p>
+  </main>
+</BaseLayout>

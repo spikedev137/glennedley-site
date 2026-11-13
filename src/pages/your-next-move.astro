@@ -3,15 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="The Next Move – Glenn Edley"
+  title="Your Next Move – Glenn Edley"
   description="Find where sales are getting stuck, get the right people behind a decision, and test your next move with Glenn Edley."
-  canonicalPath="/the-next-move/"
+  canonicalPath="/your-next-move/"
 >
   <main class="next-move">
     <span class="back"><a href="/">← Glenn Edley</a></span>
 
     <header class="intro">
-      <p class="eyebrow">The Next Move · with Glenn Edley</p>
+      <p class="eyebrow">Your Next Move · with Glenn Edley</p>
+      <p class="small">Your Next Move is in development. Get in touch if you’d like to discuss working together.</p>
       <h1>You want more sales. Where are they getting stuck?</h1>
       <p class="lead">Yes, every consultant talks about more sales. The useful question is why the sales you could be making aren't happening.</p>
       <p>You may already have a good idea, but need the people around you to see it too. Or you want a fresh pair of eyes on the customer journey before you commit to another campaign, hire or system. I ask the questions, find the likely bottleneck with you, and help you put one worthwhile move to the test.</p>
@@ -75,7 +76,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <section class="section offer" aria-labelledby="pilot">
-      <h2 id="pilot">The Next Move</h2>
+      <h2 id="pilot">Your Next Move</h2>
       <p>We focus on a commercial result you want, find the likely point where sales are being lost, and get one change into action. You get an independent view that your team can work from, a clear owner for the move, and a way to see what happened.</p>
       <ul>
         <li>A review of the relevant customer and sales journey before we decide</li>
@@ -98,7 +99,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="field"><label for="website">Website <span class="optional">(optional)</span></label><input id="website" name="website" type="url" inputmode="url" placeholder="https://" autocomplete="url" /></div>
         <div class="field"><label for="situation">What are you trying to change, and what do you think is getting in the way?</label><textarea id="situation" name="situation" rows="4" required></textarea></div>
         <button class="action" type="submit">Prepare my email to Glenn <span aria-hidden="true">↗</span></button>
-        <p class="small">This opens your email app with the answers filled in. Review the message and press Send. You can also <a href="mailto:glenn@spike.co.nz?subject=The%20Next%20Move%20enquiry">email me directly</a>.</p>
+        <p class="small">This opens your email app with the answers filled in. Review the message and press Send. You can also <a href="mailto:glenn@spike.co.nz?subject=Your%20Next%20Move%20enquiry">email me directly</a>.</p>
       </form>
     </section>
   </main>
@@ -119,7 +120,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         '',
         `What I'm trying to change and what's getting in the way:\n${get('situation')}`,
       ].join('\n');
-      window.location.href = `mailto:glenn@spike.co.nz?subject=${encodeURIComponent('The Next Move enquiry — ' + get('business'))}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:glenn@spike.co.nz?subject=${encodeURIComponent('Your Next Move enquiry — ' + get('business'))}&body=${encodeURIComponent(body)}`;
     });
   </script>
 

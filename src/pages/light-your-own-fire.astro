@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/projects.css';
+const purchaseUrl = 'https://glennedley.gumroad.com/l/lyof';
+const amazonUrl = 'https://a.co/d/0bWr7192';
+---
+
+<BaseLayout wide title="Light Your Own Fire – Charles Donoghue & Glenn Edley" description="How to Find Purpose in Your Life. A practical book by Charles Donoghue and Glenn Edley, available as a PDF on Gumroad and in print on Amazon.">
+  <main class="project-page">
+    <span class="back"><a href="/mondaymotivator/">← Newsletter</a></span>
+    <header class="project-hero book-hero">
+      <div>
+        <p class="eyebrow">Charles Donoghue &amp; Glenn Edley</p>
+        <h1>Light Your Own Fire</h1>
+        <p class="lead">How to Find Purpose in Your Life</p>
+        <p>A practical guide to finding and living your purpose. The kind that changes how you show up every day.</p>
+        <div class="project-actions">
+          <a class="brand-button" href={purchaseUrl} target="_blank" rel="noopener">Get the PDF on Gumroad <span aria-hidden="true">→</span></a>
+          <a class="secondary-action" href={amazonUrl} target="_blank" rel="noopener">Buy on Amazon</a>
+        </div>
+        <p class="project-format">241 pages · Instant PDF download · Also available in print</p>
+      </div>
+      <img class="book-cover" src="/images/projects/light-your-own-fire-cover.jpg" alt="Light Your Own Fire: How to Find Purpose in Your Life, by Charles Donoghue and Glenn Edley" width="1000" height="1491" fetchpriority="high" />
+    </header>
+
+    <section class="project-section" aria-labelledby="why-title">
+      <p class="eyebrow">Why this book exists</p>
+      <div>
+        <h2 id="why-title">His ideas haven't gone anywhere.</h2>
+        <p>I co-wrote this book with my friend Charles Donoghue. He passed away a few years ago. But his ideas haven't. This book keeps his voice alive.</p>
+        <p>This is a practical guide to finding and living your purpose. Not the fluffy kind. The kind that changes how you show up every day.</p>
+        <p>Charles spent decades coaching people to find their fire. This book is what he taught.</p>
+        <p class="project-callout">“We have met thousands of others who want that fire. This book will show you what they know.”</p>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="inside-title">
+      <p class="eyebrow">What's inside</p>
+      <div>
+        <h2 id="inside-title">241 pages. Everything that actually matters.</h2>
+        <ol class="project-chapters">
+          <li><span><strong>Purpose:</strong> what it really means and how to find yours</span></li>
+          <li><span><strong>Mental Posture:</strong> the mindset that makes everything possible</span></li>
+          <li><span><strong>Focus:</strong> cutting through the noise to what counts</span></li>
+          <li><span><strong>Courage:</strong> how to act despite fear or uncertainty</span></li>
+          <li><span><strong>Belief:</strong> building the conviction to keep going</span></li>
+          <li><span><strong>Summary:</strong> putting it all together and making it stick</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="reader-title">
+      <p class="eyebrow">This is for you if</p>
+      <div>
+        <h2 id="reader-title">You're ready to be driven by something bigger.</h2>
+        <ul class="project-fit">
+          <li>You want to be driven by something bigger than a to-do list</li>
+          <li>You feel busy but not purposeful</li>
+          <li>You've read motivational books that weren't written for you</li>
+          <li>You want something direct, practical, and short enough to finish</li>
+          <li>You're tired of knowing what to do but not doing it</li>
+          <li>You want to stop drifting and start deciding</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="endorsements-title">
+      <h2 class="eyebrow" id="endorsements-title">What people are saying</h2>
+      <div class="book-endorsements">
+        <figure>
+          <blockquote><p>“A timely contribution to the literature for those wishing to take a quantum leap in human behaviour. You will learn how to find real purpose in your life.”</p></blockquote>
+          <figcaption><strong>Dr Robert A. Brown</strong><span>PhD, Dip. Clin. Psychol. · Psychologist</span></figcaption>
+        </figure>
+        <figure>
+          <blockquote><p>“Charles and Glenn's message is a powerful one of hope. It guides us towards finding our purpose and passion — lighting the fire that drives us towards our goals.”</p></blockquote>
+          <figcaption><strong>Allison Roe MBE</strong><span>New York &amp; Boston Marathon Winner</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="authors-title">
+      <h2 class="eyebrow" id="authors-title">About the authors</h2>
+      <div class="book-authors">
+        <article class="book-author">
+          <img src="/images/projects/charles-donoghue.jpg" alt="Charles Donoghue" width="164" height="246" loading="lazy" />
+          <div><h3>Charles Donoghue</h3><p>Charles was a Performance Psychology Coach, author and international speaker. He wrote several books on personal development and motivation, helping people strengthen their belief system and build a good self-image.</p><p>Light Your Own Fire brings his writing together with Glenn's.</p></div>
+        </article>
+        <article class="book-author">
+          <img src="/images/projects/glenn-edley.jpg" alt="Glenn Edley" width="1944" height="1295" loading="eager" />
+          <div><h3>Glenn Edley</h3><p>I'm the founder of Spike and the writer behind MondayMotivator, a weekly email to kickstart your thinking.</p><p>I believe you are an experiment of one, and you should always be testing your beliefs and habits to see if they are working for you.</p><p><a href="/mondaymotivator/">Read MondayMotivator →</a></p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-purchase" aria-labelledby="get-book-title">
+      <h2 id="get-book-title">No one can judge you on what you haven’t done yet. The life you want starts with your next move.</h2>
+      <div class="project-actions">
+        <a class="brand-button" href={purchaseUrl} target="_blank" rel="noopener">Get the PDF on Gumroad <span aria-hidden="true">→</span></a>
+        <a class="secondary-action" href={amazonUrl} target="_blank" rel="noopener">Buy on Amazon</a>
+      </div>
+      <p class="project-format">241 pages · Instant PDF download · Also available in print. Current prices and currency are shown by each store.</p>
+    </section>
+  </main>
+</BaseLayout>

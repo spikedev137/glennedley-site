@@ -1,0 +1,44 @@
+---
+type Props = { id: string };
+const { id } = Astro.props;
+---
+
+<!-- Mailchimp handles validation and redirects after a successful signup.
+     Set its success URL to https://glennedley.com/thank-you/ before launch.
+     Do not add an unconditional client-side redirect or mc-validate.js. -->
+<form
+  class="newsletter-signup"
+  action="https://spike.us7.list-manage.com/subscribe/post?u=42df7d456e8d986bbd949314a&amp;id=aa2e9c1ec2&amp;f_id=005390e3f0"
+  method="post"
+  target="_self"
+  aria-label="Sign up for MondayMotivator"
+>
+  <label class="signup-label" for={`${id}-email`}>Email address</label>
+  <input
+    class="signup-email"
+    type="email"
+    name="EMAIL"
+    id={`${id}-email`}
+    autocomplete="email"
+    inputmode="email"
+    autocapitalize="none"
+    spellcheck="false"
+    placeholder="Email address"
+    required
+  />
+  <input type="hidden" name="tags" value="6691322" />
+  <div class="signup-honeypot" aria-hidden="true">
+    <input type="text" name="b_42df7d456e8d986bbd949314a_aa2e9c1ec2" tabindex="-1" value="" autocomplete="off" />
+  </div>
+  <button class="brand-button" type="submit" name="subscribe" value="Subscribe">Send me MondayMotivator <span aria-hidden="true">→</span></button>
+</form>
+
+<style>
+  .newsletter-signup { display: grid; width: max-content; max-width: 100%; gap: .65rem; position: relative; }
+  .signup-email { width: 100%; min-width: 0; min-height: 56px; padding: .9rem 1.2rem; border: 1px solid var(--blue); border-radius: 0; background: #fff; color: var(--text); font: inherit; font-size: 1rem; line-height: 1.4; }
+  .signup-email::placeholder { color: var(--mid); opacity: 1; }
+  .signup-email:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  .newsletter-signup .brand-button { margin: 0; border: 0; border-radius: 0; font-family: inherit; cursor: pointer; text-align: left; }
+  .signup-label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .signup-honeypot { position: absolute; left: -5000px; }
+</style>

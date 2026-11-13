@@ -1,0 +1,52 @@
+.project-page { max-width: 1040px; margin: 0 auto; }
+.project-page .back { margin-bottom: 2rem; }
+.project-hero { border-bottom: 2px solid var(--text); padding: 1rem 0 3rem; }
+.project-hero h1 { font-size: clamp(2.5rem, 6vw, 4.7rem); line-height: 1.04; letter-spacing: -.04em; max-width: 800px; margin-bottom: 1.3rem; }
+.project-hero .lead { max-width: 650px; font-size: 1.35rem; margin-bottom: 1.5rem; }
+.project-hero .eyebrow { color: var(--blue); }
+.project-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin: 1.6rem 0 1rem; }
+.project-actions .secondary-action { font-size: .95rem; font-weight: 700; text-decoration: underline; text-underline-offset: .3em; }
+.project-format { font-size: .85rem; color: var(--mid); }
+.project-section { display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; border-bottom: 1px solid var(--line); padding: 3rem 0; }
+.project-section h2 { font-size: clamp(1.65rem, 3vw, 2.3rem); margin: 0 0 1.3rem; line-height: 1.15; }
+.project-section .eyebrow { color: var(--blue); margin-top: .35rem; }
+.project-section .project-callout { border-left: 5px solid var(--yellow); padding-left: 1.2rem; margin: 1.5rem 0; font-size: 1.25rem; font-weight: 700; }
+.project-chapters { list-style: none; padding: 0; margin: 0; counter-reset: chapter; }
+.project-chapters li { counter-increment: chapter; display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; padding: 1rem 0; margin: 0; border-top: 1px solid var(--line); }
+.project-chapters li::before { content: counter(chapter, decimal-leading-zero); color: var(--blue); font-family: 'Archivo Black', Arial, sans-serif; }
+.project-chapters li span { min-width: 0; }
+.project-bonus { background: #fff; border-left: 5px solid var(--yellow); padding: 1.2rem; margin: 1rem 0 0; }
+.project-fit li { padding-bottom: .4rem; }
+.project-purchase { background: var(--blue); padding: clamp(1.5rem, 4vw, 3rem); margin-top: 3rem; }
+.project-purchase h2 { margin: 0 0 1rem; color: #fff; font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15; max-width: 750px; }
+.project-purchase p, .project-purchase a { color: #fff; }
+.project-purchase .brand-button { color: var(--blue); background: #fff; }
+.project-purchase .brand-button:hover { background: #eceff5; }
+.project-purchase .project-format { margin-bottom: 0; }
+.project-original { font-size: .85rem; margin-top: 1.2rem; }
+.book-hero { display: grid; grid-template-columns: 1.6fr 1fr; gap: 3rem; align-items: center; }
+.book-cover { display: block; width: min(100%, 320px); height: auto; margin: 0 auto; box-shadow: 10px 12px 0 #dce2eb; }
+.book-endorsements { display: grid; gap: 1.7rem; }
+.book-endorsements blockquote { border-left: 5px solid var(--yellow); padding-left: 1.2rem; margin: 0; }
+.book-endorsements blockquote p { font-size: 1.1rem; }
+.book-endorsements figcaption { font-family: 'DM Sans', Arial, sans-serif; font-size: .9rem; line-height: 1.6; padding: .7rem 0 0 1.5rem; }
+.book-endorsements figcaption span { display: block; color: var(--mid); font-size: .83rem; }
+.book-authors { display: grid; gap: 2rem; }
+.book-author { display: grid; grid-template-columns: 115px 1fr; gap: 1.5rem; }
+.book-author img { width: 115px; height: auto; max-height: 173px; object-fit: contain; object-position: top; }
+.book-author h3 { font-size: 1.3rem; margin: 0 0 .8rem; line-height: 1.2; }
+.book-author p:last-child { margin-bottom: 0; }
+@media (max-width: 760px) {
+  .project-section { grid-template-columns: 1fr; gap: .7rem; padding: 2rem 0; }
+  .book-hero { grid-template-columns: 1fr; gap: 2rem; }
+  .book-cover { width: min(75%, 260px); }
+  .project-actions { align-items: flex-start; flex-direction: column; }
+  .project-hero h1 { font-size: clamp(2.25rem, 10vw, 4rem); }
+}
+@media (max-width: 400px) {
+  .book-author { grid-template-columns: 1fr; gap: 1rem; }
+}
+.project-section h2.eyebrow { font-family: 'DM Sans', Arial, sans-serif; font-size: .74rem; font-weight: 700; letter-spacing: .07em; line-height: 1.65; text-transform: uppercase; }
+
+.project-hero:not(.book-hero){max-width:700px;margin-left:auto;margin-right:auto}.project-hero:not(.book-hero) h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+.book-author img[alt="Glenn Edley"]{width:115px;height:173px;max-height:none;object-fit:cover;object-position:43% center;align-self:start}

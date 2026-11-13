@@ -6,6 +6,9 @@ type Props = {
   description?: string;
   canonicalPath?: string;
   jsonLd?: Record<string, unknown>;
+  wide?: boolean;
+  showNewsletter?: boolean;
+  noindex?: boolean;
 };
 
 const {
@@ -13,6 +16,9 @@ const {
   description = 'Writing, email marketing and current projects from Glenn Edley.',
   canonicalPath = Astro.url.pathname,
   jsonLd,
+  wide = false,
+  showNewsletter = Astro.url.pathname.startsWith('/mondaymotivator/') && Astro.url.pathname !== '/mondaymotivator/',
+  noindex = false,
 } = Astro.props;
 const canonical = new URL(canonicalPath, Astro.site);
 ---
@@ -24,25 +30,40 @@ const canonical = new URL(canonicalPath, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
     {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
-    <div class="wrap">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Glenn Edley home">Glenn Edley</a>
+      <div class="header-links"><a href="/#work">Work with me</a><a class="header-subscribe" href="/mondaymotivator/">Newsletter</a></div>
+    </header>
+    <div class:list={['wrap', { 'wrap-wide': wide }]} id="content">
       <slot />
+      {showNewsletter && <aside class="newsletter-footer" aria-labelledby="newsletter-footer-title">
+        <h2 id="newsletter-footer-title">Get the next MondayMotivator.</h2>
+        <p>A thought to start your week, from Glenn Edley.</p>
+        <a class="brand-button" href="/mondaymotivator/">Send me MondayMotivator <span aria-hidden="true">→</span></a>
+      </aside>}
       <nav aria-label="Main navigation">
-        <a href="/the-next-move/">The Next Move</a>
+        <a href="/">Home</a>
+        <a href="/your-next-move/">Your Next Move</a>
         <a href="/now/">Now</a>
-        <a href="/writing/">Writing</a>
         <a href="/email/">Email</a>
-        <a href="/mondaymotivator/">MondayMotivator</a>
+        <a href="/mondaymotivator/">Newsletter</a>
         <a href="/four-factors/">Four Factors</a>
-        <a href="https://spike.co.nz" target="_blank" rel="noopener">Spike</a>
-        <a href="https://theswearingproject.com" target="_blank" rel="noopener">Swearing Project</a>
+        <a href="/work-with-spike/">Work with Spike</a>
+        <a href="/the-swearing-project/">Swearing Project</a>
+        <a href="/light-your-own-fire/">Light Your Own Fire</a>
         <a href="https://www.linkedin.com/in/glennedley/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://x.com/glennedley" target="_blank" rel="noopener">X</a>
       </nav>
