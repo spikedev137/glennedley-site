@@ -52,8 +52,10 @@ for (const icon of manifest.icons) if (!routeExists(icon.src)) problems.push(`si
 const faviconSvg = fs.readFileSync(path.join(dist, 'favicon.svg'), 'utf8');
 if (!faviconSvg.includes('fill="#0b3d91"') || !faviconSvg.includes('fill="#fff"') || !faviconSvg.includes('viewBox="0 0 64 64"')) problems.push('favicon.svg: expected white glasses on deep blue');
 const sitemapUrls = [...sitemap.matchAll(/<loc>/g)].length;
-if (sitemapUrls !== 738) problems.push(`sitemap.xml: expected 738 URLs, found ${sitemapUrls}`);
-if (htmlFiles.length !== 739) problems.push(`dist: expected 739 HTML pages, found ${htmlFiles.length}`);
+const entries = filesBelow(path.join(root, 'src/entries/mondaymotivator')).filter(file => file.endsWith('.json')).map(file => JSON.parse(fs.readFileSync(file, 'utf8')));
+const expectedUrls = 14 + new Set(entries.map(post => post.year)).size + entries.length;
+if (sitemapUrls !== expectedUrls) problems.push(`sitemap.xml: expected ${expectedUrls} URLs, found ${sitemapUrls}`);
+if (htmlFiles.length !== expectedUrls + 1) problems.push(`dist: expected ${expectedUrls + 1} HTML pages, found ${htmlFiles.length}`);
 
 // The thank-you page is a provider-controlled success destination, not a
 // searchable landing page. A successful build does not prove a live signup.
