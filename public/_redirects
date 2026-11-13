@@ -1,5 +1,5 @@
 /now.html /now/ 301
-/email.html /email/ 301
+/email.html /articles-and-media/ 301
 /writing.html /mondaymotivator/ 301
 /writing /mondaymotivator/ 301
 /writing/ /mondaymotivator/ 301
@@ -7,3 +7,6 @@
 /subscribe/ /mondaymotivator/ 301
 /the-next-move /your-next-move/ 301
 /the-next-move/ /your-next-move/ 301
+
+/email /articles-and-media/ 301
+/email/ /articles-and-media/ 301

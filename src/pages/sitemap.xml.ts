@@ -10,7 +10,7 @@ const paths = [
   '/now/',
   '/the-swearing-project/',
   '/light-your-own-fire/',
-  '/email/',
+  '/articles-and-media/',
   '/first-100-subscribers/',
   '/mondaymotivator/',
   '/four-factors/',
