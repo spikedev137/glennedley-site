@@ -29,8 +29,8 @@ for (const file of htmlFiles) {
   if ($('title').length !== 1 || !$('title').text().trim()) problems.push(`${label}: missing or repeated title`);
   if ($('h1').length !== 1) problems.push(`${label}: expected one h1, found ${$('h1').length}`);
   if ($('link[rel="canonical"]').length !== 1) problems.push(`${label}: missing canonical URL`);
-  if ($('link[rel="icon"][href="/favicon.svg"][type="image/svg+xml"]').length !== 1 || $('link[rel="icon"][href="/favicon.ico"]').length !== 1) problems.push(`${label}: missing glasses favicon or ICO fallback`);
-  if ($('link[rel="apple-touch-icon"][href="/apple-touch-icon.png"]').length !== 1 || $('link[rel="manifest"][href="/site.webmanifest"]').length !== 1) problems.push(`${label}: missing platform icons`);
+  if ($('link[rel="icon"][href="/favicon.svg?v=glasses-20261113"][type="image/svg+xml"]').length !== 1 || $('link[rel="icon"][href="/favicon.ico?v=glasses-20261113"]').length !== 1) problems.push(`${label}: missing glasses favicon or ICO fallback`);
+  if ($('link[rel="apple-touch-icon"][href="/apple-touch-icon.png?v=glasses-20261113"]').length !== 1 || $('link[rel="manifest"][href="/site.webmanifest?v=glasses-20261113"]').length !== 1) problems.push(`${label}: missing platform icons`);
   if (/\[\/?vc_|open\.php|unsubscribe\.php|mail\/unsubscribe/i.test(html)) problems.push(`${label}: unresolved WordPress or email-system markup`);
   $('a[href^="/"]').each((_, anchor) => {
     const href = $(anchor).attr('href');
@@ -73,7 +73,7 @@ for (const relative of ['index.html', 'mondaymotivator/index.html']) {
   if (form.find('input[type="hidden"][name="tags"]').attr('value') !== '6691322') problems.push(`${relative}: signup tag changed`);
   if (form.find('input[name="b_42df7d456e8d986bbd949314a_aa2e9c1ec2"]').attr('tabindex') !== '-1') problems.push(`${relative}: missing anti-bot field`);
   if (form.find('button[type="submit"]').length !== 1) problems.push(`${relative}: missing submit button`);
-  if ($('script[src*="mc-validate"], link[href*="mailchimp.com/embedcode"]').length) problems.push(`${relative}: embedded scripts/styles must not override the design or redirect`);
+  if ($('script[src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"]').length !== 1 || $('script[src^="/newsletter-success.js"]').length !== 1) problems.push(`${relative}: missing official validation or success-only adapter`);
 }
 
 // Dedicated project pages keep their verified external purchase destinations,

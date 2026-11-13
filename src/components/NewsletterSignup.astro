@@ -3,19 +3,22 @@ type Props = { id: string };
 const { id } = Astro.props;
 ---
 
-<!-- Mailchimp handles validation and redirects after a successful signup.
-     Set its success URL to https://glennedley.com/thank-you/ before launch.
-     Do not add an unconditional client-side redirect or mc-validate.js. -->
+<!-- Official Mailchimp validation handles errors and CAPTCHA. The site adapter
+     redirects only after Mailchimp returns result=success. Native POST remains
+     available if the external script fails or the visitor chooses the fallback. -->
+<div id="mc_embed_signup">
 <form
   class="newsletter-signup"
+  id="mc-embedded-subscribe-form"
   action="https://spike.us7.list-manage.com/subscribe/post?u=42df7d456e8d986bbd949314a&amp;id=aa2e9c1ec2&amp;f_id=005390e3f0"
   method="post"
   target="_self"
   aria-label="Sign up for MondayMotivator"
 >
+  <div class="mc-field-group">
   <label class="signup-label" for={`${id}-email`}>Email address</label>
   <input
-    class="signup-email"
+    class="signup-email required email"
     type="email"
     name="EMAIL"
     id={`${id}-email`}
@@ -26,12 +29,25 @@ const { id } = Astro.props;
     placeholder="Email address"
     required
   />
+  </div>
   <input type="hidden" name="tags" value="6691322" />
   <div class="signup-honeypot" aria-hidden="true">
     <input type="text" name="b_42df7d456e8d986bbd949314a_aa2e9c1ec2" tabindex="-1" value="" autocomplete="off" />
   </div>
   <button class="brand-button" type="submit" name="subscribe" value="Subscribe">Send me MondayMotivator <span aria-hidden="true">→</span></button>
+  <div id="mce-responses" aria-live="polite">
+    <div id="mce-error-response" class="response" style="display:none"></div>
+    <div id="mce-success-response" class="response" style="display:none"></div>
+  </div>
+  <button id="newsletter-native-fallback" type="button" hidden>Continue using Mailchimp’s form</button>
 </form>
+</div>
+<script is:inline>
+  window.fnames = ['EMAIL'];
+  window.ftypes = ['email'];
+</script>
+<script is:inline src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script is:inline src="/newsletter-success.js?v=20261113"></script>
 
 <style>
   .newsletter-signup { display: grid; width: max-content; max-width: 100%; gap: .65rem; position: relative; }
