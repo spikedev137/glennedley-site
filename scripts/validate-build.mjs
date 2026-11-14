@@ -29,6 +29,7 @@ for (const file of htmlFiles) {
   if ($('title').length !== 1 || !$('title').text().trim()) problems.push(`${label}: missing or repeated title`);
   if ($('h1').length !== 1) problems.push(`${label}: expected one h1, found ${$('h1').length}`);
   if ($('link[rel="canonical"]').length !== 1) problems.push(`${label}: missing canonical URL`);
+  if (!$('link[rel="canonical"]').attr('href')?.startsWith('https://www.glennedley.com/')) problems.push(`${label}: canonical must use HTTPS www host`);
   if ($('link[rel="icon"][href="/favicon.svg?v=glasses-20261113"][type="image/svg+xml"]').length !== 1 || $('link[rel="icon"][href="/favicon.ico?v=glasses-20261113"]').length !== 1) problems.push(`${label}: missing glasses favicon or ICO fallback`);
   if ($('link[rel="apple-touch-icon"][href="/apple-touch-icon.png?v=glasses-20261113"]').length !== 1 || $('link[rel="manifest"][href="/site.webmanifest?v=glasses-20261113"]').length !== 1) problems.push(`${label}: missing platform icons`);
   if (/\[\/?vc_|open\.php|unsubscribe\.php|mail\/unsubscribe/i.test(html)) problems.push(`${label}: unresolved WordPress or email-system markup`);
@@ -39,6 +40,11 @@ for (const file of htmlFiles) {
 }
 
 const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
+for (const [, url] of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) {
+  if (!url.startsWith('https://www.glennedley.com/')) problems.push(`sitemap.xml: unexpected canonical host ${url}`);
+}
+const robots = fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8');
+if (!robots.includes('Sitemap: https://www.glennedley.com/sitemap.xml')) problems.push('robots.txt: sitemap must use HTTPS www host');
 const pngSizes = { 'favicon-16x16.png': 16, 'favicon-32x32.png': 32, 'apple-touch-icon.png': 180, 'icon-192.png': 192, 'icon-512.png': 512 };
 for (const [filename, size] of Object.entries(pngSizes)) {
   const data = fs.readFileSync(path.join(dist, filename));
@@ -88,7 +94,7 @@ for (const { route, purchase, chapters } of projectChecks) {
   const $ = cheerio.load(fs.readFileSync(path.join(dist, route, 'index.html'), 'utf8'));
   if ($(`a[href="${purchase}"]`).length !== 2) problems.push(`${route}: expected two verified purchase links`);
   if ($('.project-chapters li').length !== chapters) problems.push(`${route}: chapter list changed`);
-  if (!sitemap.includes(`https://glennedley.com/${route}/`)) problems.push(`${route}: missing sitemap entry`);
+  if (!sitemap.includes(`https://www.glennedley.com/${route}/`)) problems.push(`${route}: missing sitemap entry`);
   $('img').each((_, image) => {
     const src = $(image).attr('src');
     if (!src?.startsWith('/images/projects/') || !routeExists(src)) problems.push(`${route}: image must exist locally: ${src}`);

@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { posts, years } from '../data/posts';
 import { factors } from '../data/factors';
 
-const site = 'https://glennedley.com';
+const site = 'https://www.glennedley.com';
 const paths = [
   '/',
   '/your-next-move/',
